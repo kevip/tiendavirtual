@@ -1,0 +1,46 @@
+body{
+	/*font-family: Roboto;*/
+}
+.menu-list{
+	width: 100%;
+	min-height: 60px;
+	text-align: center;
+}
+.menu-list li{
+	display: inline-block;
+	float: none;
+}
+.menu-list li a{
+	margin: 0 25px;
+	font-size: 25px;
+}
+.img-curso{
+	max-width: 290px;
+    max-height: 200px;
+}
+.courses-container{
+	margin-top: 20px;
+}
+.header .cs{
+	float: right;	
+}
+.header .cs a{
+	font-size: 16px;
+	margin: 0;
+}
+.login-form{
+	float: right;
+}
+.fb-btn-content{
+	margin: 0px 0px;
+	text-align:center;
+}
+.login-form .btn-login,
+.register-form .btn-registrar,
+.fb-btn-content a{
+	width: 100%;
+}
+.card-form{
+	padding: 20px;
+}
+#map { height: 100%; }

@@ -1,0 +1,30 @@
+{% extends 'presentation/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<style>
+    html, body { height: 100%; margin: 0; padding: 0; }
+</style>
+
+<div id="map"></div>
+
+<script>
+   /* var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+    var mapOptions = {
+      zoom: 4,
+      center: myLatlng
+    }
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        title:"Hello World!"
+    });
+
+    marker.setMap(map);*/
+</script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9985AuVWs9zk9elSXZIuS1ftGOclv4rs&callback=initMap">
+</script>
+<script src="{% static 'js/map.js' %}" type="text/javascript"></script>
+{% endblock %}
