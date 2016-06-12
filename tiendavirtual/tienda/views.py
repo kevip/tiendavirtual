@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.core import serializers
+from .models import Cliente, Tiendas, Localizacion, Empleado
 
 from .forms import RegUsForm
 
@@ -72,3 +73,9 @@ def registrar_usuario(request):
 
 def stores(request):
     return render(request, "presentation/stores.html", {})
+
+#api
+def tiendas(request):
+    localizaciones = Localizacion.objects.all()
+    localizaciones = serializers.serialize('json',localizaciones)
+    return HttpResponse(localizaciones,content_type="application/json")
