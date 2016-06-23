@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from tienda import views
-
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -10,4 +10,7 @@ urlpatterns = [
     url(r'^registrar_usuario/$', views.registrar_usuario, name='registrar_usuario'),
     url(r'^stores/$', views.stores, name='stores'),
     url(r'^api/tiendas/$', views.tiendas, name='tiendas'),
+    url(r'^products/$', views.products, name='products'),
+    url(r'^api/ListStores/$', views.ListStores.as_view()),
 ]
+urlpatterns = format_suffix_patterns(urlpatterns)

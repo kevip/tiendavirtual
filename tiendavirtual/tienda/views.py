@@ -9,7 +9,11 @@ from .models import Cliente, Tiendas, Localizacion, Empleado
 
 from .forms import RegUsForm
 
-
+from rest_framework import serializers
+from rest_framework.views import APIView
+from rest_framework import viewsets
+from rest_framework.response import Response
+from .serializers import TiendasSerializer, LocalizacionSerializer
 # Create your views here.
 
 
@@ -75,7 +79,16 @@ def stores(request):
     return render(request, "presentation/stores.html", {})
 
 #api
+def products(request):
+    return render(request, "presentation/products.html",{})
+
 def tiendas(request):
     localizaciones = Localizacion.objects.all()
     localizaciones = serializers.serialize('json',localizaciones)
     return HttpResponse(localizaciones,content_type="application/json")
+
+class ListStores(APIView):
+    def get(self, request):
+        tiendas = Tiendas.objects.all()
+        serializer = TiendasSerializer(tiendas, many=True)
+        return Response(serializer.data)
