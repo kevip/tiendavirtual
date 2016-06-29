@@ -79,9 +79,10 @@ def stores(request):
     return render(request, "presentation/stores.html", {})
 
 #api
+"""
 def products(request):
     return render(request, "presentation/products.html",{})
-
+"""
 def tiendas(request):
     localizaciones = Localizacion.objects.all()
     localizaciones = serializers.serialize('json',localizaciones)

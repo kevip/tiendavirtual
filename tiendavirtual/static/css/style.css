@@ -18,8 +18,25 @@ body{
 	max-width: 290px;
     max-height: 200px;
 }
-.courses-container{
+.catalog-container{
 	margin-top: 20px;
+}
+.catalog-container img{
+		cursor:pointer;
+}
+.catalog-container .card .card-content .product-title{
+    font-weight: bold;
+    line-height:20px;
+    cursor: pointer;
+}
+.catalog-container .card .desc{
+    margin-bottom: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.catalog-container .subcategorias{
+    display:none;
 }
 .header .cs{
 	float: right;	

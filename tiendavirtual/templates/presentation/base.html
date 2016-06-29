@@ -17,7 +17,7 @@
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="hide-on-med-and-down menu-list">
 			        <li><a href="{% url 'home' %}">Inicio</a></li>
-			        <li><a href="{% url 'products' %}">Catálogo</a></li>
+			        <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
 			        <li><a href="{% url 'stores' %}">Tiendas</a></li>
 			        <li><a href="#">Help</a></li>
 			        {% if user.is_authenticated %}
@@ -26,7 +26,7 @@
 		    	</ul>
 	    		<ul class="side-nav" id="mobile-demo">
 			        <li><a href="{% url 'home' %}">Inicio</a></li>
-			        <li><a href="{% url 'products' %}">Catálogo</a></li>
+			        <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
 			        <li><a href="{% url 'stores' %}">Tiendas</a></li>
 			        <li><a href="#">Help</a></li>
 			        {% if user.is_authenticated %}
@@ -51,6 +51,31 @@
 		    	$('.modal-trigger').leanModal();
 		    }
 		    });
+	</script>
+
+	<script>
+		(function(){
+			"use strict";
+			$(".categoria select").change(function(e){
+				var selected = $(".categoria select option:selected");
+				if(selected.val()){
+					 $(".subcategorias").show();
+				}
+
+			});
+			$('.modal-trigger').click(openMod);
+
+
+			function openMod(e){
+				var prod = $(e.currentTarget);
+				$("#modal1 h4").text(prod.data("nombre"));
+				$("#modal1 img").attr("src",prod.data("url"));
+				$("#modal1 p").text(prod.data("descripcion"));
+				$("#modal1 span").text(prod.data("precio"));
+				$("#modal1").show();
+			}
+
+		})();
 	</script>
 </body>
 </html>

@@ -10,7 +10,6 @@ urlpatterns = [
     url(r'^registrar_usuario/$', views.registrar_usuario, name='registrar_usuario'),
     url(r'^stores/$', views.stores, name='stores'),
     url(r'^api/tiendas/$', views.tiendas, name='tiendas'),
-    url(r'^products/$', views.products, name='products'),
     url(r'^api/ListStores/$', views.ListStores.as_view()),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)
