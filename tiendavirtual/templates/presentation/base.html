@@ -59,7 +59,8 @@
 			$(".categoria select").change(function(e){
 				var selected = $(".categoria select option:selected");
 				if(selected.val()){
-					 $(".subcategorias").show();
+					console.log(selected.val());
+					window.open(selected.val(),"_self");
 				}
 
 			});
