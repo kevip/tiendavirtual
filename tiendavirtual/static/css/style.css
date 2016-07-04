@@ -62,15 +62,19 @@ body{
 }
 #map { height: 100%; }
 
+.dashboard-tienda .item i,
 .dashboard .item i{
     display: block;
 }
+.dashboard-tienda .item,
 .dashboard .item{
     text-align: center;
 }
+.dashboard-tienda .item a i,
 .dashboard .item a i{
     color: black;
 }
+.dashboard-tienda .item a i:hover,
 .dashboard .item a i:hover{
     color: #c0ca33;
 }

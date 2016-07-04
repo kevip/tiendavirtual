@@ -1,0 +1,29 @@
+{% extends 'administrador/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="container lista-tiendas">
+        <table class="highlight bordered">
+        <thead>
+          <tr>
+              <th data-field="id">Nombre</th>
+              <th data-field="name">Direccion</th>
+              <th data-field="price">Horario de Atención</th>
+              <th data-field="price">Teléfono</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for tienda in tiendas%}
+          <tr>
+            <td>{{tienda.nombre}}</td>
+            <td>{{tienda.direccion}}</td>
+            <td>{{tienda.horario_atencion}}</td>
+            <td>{{tienda.telefono}}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}

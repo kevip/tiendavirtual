@@ -2,6 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 
 from administrador.forms import RegistrarTiendaForm, RegistrarLocalizacionForm
+from tienda.models import Tiendas
 
 # Create your views here.
 
@@ -31,3 +32,13 @@ def registrar_tienda(request):
         else:
             return HttpResponseRedirect('/administrador')
 
+def dashboard_tiendas(request):
+    template = loader.get_template("administrador/tienda/dashboard_tiendas.html")
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+def lista_tiendas(request):
+    template = loader.get_template("administrador/tienda/lista_tiendas.html")
+    tiendas = Tiendas.objects.all()
+    context = {'tiendas':tiendas}
+    return HttpResponse(template.render(context, request))
