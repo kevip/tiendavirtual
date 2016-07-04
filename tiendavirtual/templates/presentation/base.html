@@ -19,7 +19,7 @@
 			        <li><a href="{% url 'home' %}">Inicio</a></li>
 			        <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
 			        <li><a href="{% url 'stores' %}">Tiendas</a></li>
-			        <li><a href="#">Help</a></li>
+			        <li><a href="{% url 'servicio_tecnico' %}">Help</a></li>
 			        {% if user.is_authenticated %}
 			        <li class="cs"><a href="{% url 'cerrar_sesion' %}"><i class="material-icons right">power_settings_new</i>{{user.get_full_name}}</a></li>
 			        {% endif %}
@@ -28,7 +28,7 @@
 			        <li><a href="{% url 'home' %}">Inicio</a></li>
 			        <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
 			        <li><a href="{% url 'stores' %}">Tiendas</a></li>
-			        <li><a href="#">Help</a></li>
+			        <li><a href="{% url 'servicio_tecnico' %}">Help</a></li>
 			        {% if user.is_authenticated %}
 			        <li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>
 			        {% endif %}
@@ -79,7 +79,7 @@
 				$("#modal1 span").text(prod.data("precio"));
 				$("#modal1").show();
 			}
-
+			$('.slider').slider({full_width: true});
 		})();
 	</script>
 </body>

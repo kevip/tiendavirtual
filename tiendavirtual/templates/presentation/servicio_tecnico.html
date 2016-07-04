@@ -1,0 +1,48 @@
+{% extends 'presentation/base.html' %}
+{% load staticfiles %}
+{% block content %}
+  <div class="slider">
+    <ul class="slides">
+	      <li>
+	        <img src="../../media/x1.jpg"> <!-- random image -->
+	        <div class="caption center-align">
+	          <h3>Servicio Técnico</h3>
+	          <h5 class="light grey-text text-lighten-3">Contáctenos llenando el siguiente formulario</h5>	 		
+	        </div>
+	      </li>		      
+    </ul>
+  </div>
+	<div class="container">
+	 	<div class="row">			
+			<form class="col s12">
+			<div class="row">
+				<div class="input-field col s6">
+				  <input id="first_name" type="text" class="validate">
+				  <label for="first_name">Nombres</label>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="input-field col s6">
+				  <input id="last_name" type="text" class="validate">
+				  <label for="last_name">Apellidos</label>
+				</div>
+			</div>					
+			<div class="row">
+				<div class="input-field col s12">
+				  <input id="email" type="email" class="validate" required>
+				  <label for="email">Email</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<textarea type="text" class="materialize-textarea validate" placeholder="Escriba su mensaje" required></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<a href="mailto:castaneda.kevin114@gmail.com" class="btn btn-primary">Enviar</a>
+			</div>
+			</form>
+	  	</div>
+	</div>
+	
+{% endblock %}

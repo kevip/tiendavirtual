@@ -78,6 +78,10 @@ def registrar_usuario(request):
 def stores(request):
     return render(request, "presentation/stores.html", {})
 
+
+def servicio_tecnico(request):
+    return render(request, "presentation/servicio_tecnico.html",{})
+
 #api
 """
 def products(request):
@@ -93,3 +97,4 @@ class ListStores(APIView):
         tiendas = Tiendas.objects.all()
         serializer = TiendasSerializer(tiendas, many=True)
         return Response(serializer.data)
+
