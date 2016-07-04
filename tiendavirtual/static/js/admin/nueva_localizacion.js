@@ -1,5 +1,5 @@
 function nueva_localizacion(csrftoken, latitud, longitud){
-    var url = window.Tienda.url?window.Tienda.url:"http://127.0.0.1:8000";
+    var url = "http://127.0.0.1:8000/";
     url+= "api/localizacion/crear";
     var tiendas;
     var data = {latitud: latitud, longitud: longitud};
@@ -20,6 +20,7 @@ function nueva_localizacion(csrftoken, latitud, longitud){
                              .text("("+data.latitud+", "+data.longitud+")"));
         $("#id_localizacion").val(data.id);
         $('#id_localizacion').material_select();
+
     })
     function before(xhr, settings) {
         if (!csrfSafeMethod(settings.type) && !this.crossDomain) {

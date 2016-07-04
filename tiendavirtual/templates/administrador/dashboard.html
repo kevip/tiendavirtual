@@ -1,0 +1,23 @@
+{% extends 'administrador/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="container dashboard">
+        <div class="row">
+            <div class="col s6 m4 item">
+                <a href="{% url 'nueva_tienda' %}"><i class="large material-icons">store</i></a>
+                <a href="{% url 'nueva_tienda' %}">Tiendas</a>
+            </div>
+            <div class="col s6 m4 item">
+                <a href=""><i class="large material-icons">recent_actors</i></a>
+                <a href="#">Proveedores</a>
+            </div>
+            <div class="col s6 m4 item">
+                <a href=""><i class="large material-icons">shopping_basket</i></a>
+                <a href="#">Productos</a>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -9,10 +9,11 @@
     function registrarLocalizacion(e){
         e.preventDefault();
         var latitud = $(e.currentTarget).find('.latitud').val();
-        var longitud = $(e.currentTarget).find('.longitud').val()
+        var longitud = $(e.currentTarget).find('.longitud').val();
         var csrftoken = getCookie('csrftoken',latitud,longitud);
 
         nueva_localizacion(csrftoken, latitud, longitud);
+        $('#modalLocalizacion').closeModal();
     }
 
 

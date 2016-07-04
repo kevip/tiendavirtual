@@ -62,6 +62,18 @@ body{
 }
 #map { height: 100%; }
 
+.dashboard .item i{
+    display: block;
+}
+.dashboard .item{
+    text-align: center;
+}
+.dashboard .item a i{
+    color: black;
+}
+.dashboard .item a i:hover{
+    color: #c0ca33;
+}
 .image-store{
     width: 150px;
     height: 100px;
