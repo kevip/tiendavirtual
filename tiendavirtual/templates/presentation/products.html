@@ -6,20 +6,34 @@
 		<div class="row filter-content">
 			<div class="input-field col s12 m3 categoria">
 				<select>
+					{% if categoria %}
+					<option value="" disabled selected>{{ categoria.nombre }}</option>
+					{% else %}
 					<option value="" disabled selected>Categorías</option>
-					{% for categoria in categorias %}
-					<option data-url="{% url 'catalogo_categoria' categoria.id %}" value="{% url 'catalogo_categoria' categoria.id %}">{{ categoria.nombre}}</option>
+					{% endif %}
+					{% for categ in categorias %}
+					<option data-url="{% url 'catalogo_categoria' categ.id %}" value="{% url 'catalogo_categoria' categ.id %}">{{ categ.nombre}}</option>
 					{% endfor %}
+					<option data-url="/catalogo" value="/catalogo">Todos</option>
 				</select>
 		  	</div>
+			{% if categoria %}
 			<div class="input-field col s12 m3 subcategorias">
 				<select>
+					{% if subcategoria %}
+					<option value="" disabled selected>{{ subcategoria.nombre }}</option>
+					{% else %}
 					<option value="" disabled selected>Subcategorías</option>
-					{% for subcategoria in subcategorias %}
-					<option value="{{ subcategoria.id }}">{{ subcategoria.nombre}}</option>
+					{% endif %}
+					{% for subc in subcategorias %}
+					<option data-url="{% url 'catalogo_subcategoria' categoria.id subc.id %}" value="{% url 'catalogo_subcategoria' categoria.id subc.id %}">{{ subc.nombre}}</option>
 					{% endfor %}
 				</select>
-		  	</div>
+			</div>
+			<div class="col s12 m3 refresh">
+				<a href="/catalogo"><i class="material-icons">replay</i></a>
+			</div>
+			{% endif %}
 
 		</div>
 		<div class="row">

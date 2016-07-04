@@ -59,10 +59,14 @@
 			$(".categoria select").change(function(e){
 				var selected = $(".categoria select option:selected");
 				if(selected.val()){
-					console.log(selected.val());
-					window.open(selected.val(),"_self");
+					window.open(selected.data("url"),"_self");
 				}
-
+			});
+			$(".subcategorias select").change(function(e){
+				var selected = $(".subcategorias select option:selected");
+				if(selected.val()){
+					window.open(selected.data("url"),"_self");
+				}
 			});
 			$('.modal-trigger').click(openMod);
 

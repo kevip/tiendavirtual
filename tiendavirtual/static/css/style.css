@@ -35,8 +35,8 @@ body{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-.catalog-container .subcategorias{
-    display:none;
+.catalog-container .refresh{
+    margin-top: 30px;
 }
 .header .cs{
 	float: right;	
@@ -65,4 +65,8 @@ body{
 .image-store{
     width: 150px;
     height: 100px;
+}
+.nueva-tienda{
+    margin-top: 10px;
+    border: 1px solid black;
 }

@@ -22,6 +22,10 @@ class Localizacion(models.Model):
     def __str__(self):
         return "({0}, {1})".format(self.latitud,self.longitud)
 
+    def __iter__(self):
+        return [self.latitud,
+                self.longitud]
+
 class Tiendas(models.Model):
     nombre = models.CharField('Nombre', max_length=100)
     direccion = models.TextField('Direccion')

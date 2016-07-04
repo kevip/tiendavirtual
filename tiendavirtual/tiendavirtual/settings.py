@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'tienda',
     'productos',
+    'administrador',
+    'api',
+
 ]
 
 MIDDLEWARE_CLASSES = [
