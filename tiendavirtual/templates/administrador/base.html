@@ -18,8 +18,8 @@
 					<ul class="hide-on-med-and-down menu-list">
 						<li><a href="{% url 'administrador' %}">Dashboard</a></li>
 						<li><a href="{% url 'dashboard_tiendas' %}">Tiendas</a></li>
-						<li><a href="">Proveedores</a></li>
-						<li><a href="">Productos</a></li>
+						<li><a href="·">Proveedores</a></li>
+						<li><a href="{% url 'dashboard_productos' %}">Productos</a></li>
 						<li><a href="#">Help</a></li>
 						{% if user.is_authenticated %}
 						<li class="cs"><a href="{% url 'cerrar_sesion' %}"><i class="material-icons right">power_settings_new</i>{{user.get_full_name}}</a></li>
@@ -30,7 +30,7 @@
 						<li><a href="{% url 'administrador' %}">Dashboard</a></li>
 						<li><a href="{% url 'dashboard_tiendas' %}">Tiendas</a></li>
 						<li><a href="">Proveedores</a></li>
-						<li><a href="">Productos</a></li>
+						<li><a href="{% url 'dashboard_productos' %}">Productos</a></li>
 						<li><a href="#">Help</a></li>
 						{% if user.is_authenticated %}
 						<li><a href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a></li>

@@ -1,0 +1,31 @@
+{% extends 'administrador/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <div class="container lista-tiendas">
+        <table class="highlight bordered">
+        <thead>
+          <tr>
+              <th data-field="id">Nombre</th>
+              <th data-field="name">Descripción</th>
+              <th data-field="price">Precio</th>
+              <th data-field="price">Categoria</th>
+              <th data-field="price">Imagen</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for producto in productos%}
+          <tr>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.categoria}}</td>            
+            <td>{{producto.imagen}}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}
