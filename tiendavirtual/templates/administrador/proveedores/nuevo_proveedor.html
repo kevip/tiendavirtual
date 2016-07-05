@@ -1,0 +1,56 @@
+{% extends 'administrador/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<nav>
+	<div class="nav-wrapper blue darken-1">
+		<div class="col s12">
+			<a href="{% url 'administrador' %}" class="breadcrumb">Dashboard</a>
+			<a href="{% url 'dashboard_proveedores' %}" class="breadcrumb">Proveedores</a>
+			<a href="#!" class="breadcrumb">Nuevo Proveedor</a>
+		</div>
+	</div>
+</nav>
+<div class="container nueva-tienda">
+    <div class="row">
+		<form class="col s12 nueva-tienda-form" method="POST" action="{% url 'registrar_proveedor' %}" enctype="multipart/form-data">
+		{% csrf_token %}
+			<div class="row">
+				<div class="col s12 m6 offset-m3">
+					<h4 class="center-align">Nuevo Proveedor </h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6 offset-m3">
+				  {{ form.razon_social }}
+				  {{ form.razon_social.label_tag }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6 offset-m3">
+				  {{ form.direccion }}
+				  {{ form.direccion.label_tag }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6 offset-m3 ">
+					{{ form.correo }}
+					{{ form.correo.label_tag }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6 offset-m3">
+					{{ form.telefono }}
+					{{ form.telefono.label_tag }}
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6 offset-m3 center-align">
+					<button class="btn btn-registrar blue darken-3 waves-effect waves-light" type="submit" >Registrar
+						<i class="material-icons right">send</i>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}

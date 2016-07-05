@@ -1,7 +1,14 @@
 {% extends 'administrador/base.html' %}
 {% load staticfiles %}
 {% block content %}
-
+<nav>
+	<div class="nav-wrapper blue darken-1">
+		<div class="col s12">
+			<a href="{% url 'administrador' %}" class="breadcrumb">Dashboard</a>
+			<a href="#!" class="breadcrumb">Tiendas</a>
+		</div>
+	</div>
+</nav>
     <div class="container dashboard-tienda">
         <div class="row">
             <div class="col s6 m4 item">

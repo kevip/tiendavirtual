@@ -1,0 +1,38 @@
+{% extends 'administrador/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<nav>
+	<div class="nav-wrapper blue darken-1">
+		<div class="col s12">
+			<a href="{% url 'administrador' %}" class="breadcrumb">Dashboard</a>
+			<a href="{% url 'dashboard_proveedores' %}" class="breadcrumb">Proveedores</a>
+			<a href="#!" class="breadcrumb">Lista de Proveedores</a>
+		</div>
+	</div>
+</nav>
+    <div class="container lista-tiendas">
+        <table class="highlight bordered">
+        <thead>
+          <tr>
+              <th data-field="id">Razón Social</th>
+              <th data-field="name">Direccion</th>
+              <th data-field="price">Correo</th>
+              <th data-field="price">Teléfono</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for proveedor in proveedores%}
+          <tr>
+            <td>{{proveedor.razon_social}}</td>
+            <td>{{proveedor.direccion}}</td>
+            <td>{{proveedor.correo}}</td>
+            <td>{{proveedor.telefono}}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}

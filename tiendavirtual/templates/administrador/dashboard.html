@@ -9,12 +9,16 @@
                 <a href="{% url 'dashboard_tiendas' %}">Tiendas</a>
             </div>
             <div class="col s6 m4 item">
-                <a href=""><i class="large material-icons">recent_actors</i></a>
-                <a href="#">Proveedores</a>
+                <a href="{% url 'dashboard_productos' %}"><i class="large material-icons">shopping_cart</i></a>
+                <a href="{% url 'dashboard_productos' %}">Productos</a>
             </div>
             <div class="col s6 m4 item">
-                <a href="{% url 'dashboard_productos' %}"><i class="large material-icons">shopping_basket</i></a>
-                <a href="{% url 'dashboard_productos' %}">Productos</a>
+                <a href="{% url 'dashboard_compras' %}"><i class="large material-icons">shopping_basket</i></a>
+                <a href="{% url 'dashboard_compras' %}">Compras</a>
+            </div>
+            <div class="col s6 m4 item">
+                <a href="{% url 'dashboard_proveedores' %}"><i class="large material-icons">person_pin</i></a>
+                <a href="{% url 'dashboard_proveedores' %}">Proveedores</a>
             </div>
 
         </div>

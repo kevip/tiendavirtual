@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from tienda.models import Empleado,Tiendas,Localizacion
 from productos.models import Producto
+from compras.models import Proveedor
 
 
 class RegistrarTiendaForm(forms.ModelForm):
@@ -79,4 +80,54 @@ class RegistrarProducto(forms.ModelForm):
                 attrs={'class': 'validate',
                        'required': False}
             ),            
+        }
+
+class RegistrarCompra(forms.ModelForm):
+    class Meta:
+        model = Producto
+        fields = ["nombre", "precio", "descripcion","imagen","categoria","subcategoria","estado"]
+        widgets = {
+            'nombre': forms.TextInput(
+                attrs={'class': 'validate',
+                       'required': False}
+            ),
+            'precio': forms.TextInput(
+                attrs={'class': 'validate',
+                       'required': False}
+            ),
+            'descripcion': forms.Textarea(
+                attrs={'class': 'validate',
+                       'required': False}
+            ),
+            'imagen': forms.FileInput(
+                attrs={'class': 'validate',
+                       'required': False}
+            ),
+            'descripcion': forms.TextInput(
+                attrs={'class': 'validate',
+                       'required': False}
+            ),
+        }
+
+class RegistrarProveedorForm(forms.ModelForm):
+    class Meta:
+        model = Proveedor
+        fields = ["razon_social", "direccion", "correo","telefono"]
+        widgets = {
+            'razon_social': forms.TextInput(
+                attrs={'class': 'validate',
+                       'required': True}
+            ),
+            'direccion': forms.Textarea(
+                attrs={'class': 'validate materialize-textarea',
+                       'required': False}
+            ),
+            'correo': forms.TextInput(
+                attrs={'class': 'validate',
+                       'required': False}
+            ),
+            'telefono': forms.TextInput(
+                attrs={'class': 'validate',
+                       'required': False}
+            ),
         }

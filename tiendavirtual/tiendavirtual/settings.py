@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'tienda',
     'productos',
     'administrador',
+    'compras',
     'api',
 
 ]
