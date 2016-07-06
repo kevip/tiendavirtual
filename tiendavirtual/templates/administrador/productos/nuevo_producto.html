@@ -11,6 +11,12 @@
 					<h4 class="center-align">Nuevo Producto </h4>
 				</div>
 			</div>
+			<div class="row" style="display:none">
+				<div class="input-field col s12 m6 offset-m3">
+				  {{ form.id }}
+				  {{ form.id.label_tag }}
+				</div>
+			</div>
 			<div class="row">
 				<div class="input-field col s12 m6 offset-m3">
 				  {{ form.nombre }}
@@ -40,22 +46,11 @@
 					{{ form.subcategoria }}
 					{{ form.subcategoria.label_tag }}
 				</div>
-			</div>	
-			<div class="row">
-				<div class="input-field col s12 m6 offset-m3">
-					{{ form.estado }}
-					{{ form.estado.label_tag }}
-				</div>
 			</div>
 			<div class="row">
-				<div class="input-field file-field col s12 m6 offset-m3">
-					<div class="btn">
-						<span>Imagen</span>
-						{{ form.imagen }}
-					</div>
-					<div class="file-path-wrapper">
-						<input class="file-path validate" type="text">
-					</div>
+				<div class="input-field col s12 m6 offset-m3">
+					{{ form.stock }}
+					{{ form.stock.label_tag }}
 				</div>
 			</div>
 			<div class="row">

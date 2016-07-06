@@ -1,8 +1,9 @@
 from django import forms
+from django.forms import DateField
 from django.contrib.auth.models import User
 from tienda.models import Empleado,Tiendas,Localizacion
 from productos.models import Producto
-from compras.models import Proveedor
+from compras.models import Proveedor,Compra
 
 
 class RegistrarTiendaForm(forms.ModelForm):
@@ -58,7 +59,7 @@ class RegistrarLocalizacionForm(forms.ModelForm):
 class RegistrarProducto(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ["nombre", "precio", "descripcion","imagen","categoria","subcategoria","estado"]
+        fields = ["nombre", "precio", "descripcion","imagen","categoria","subcategoria","stock"]
         widgets = {
             'nombre': forms.TextInput(
                 attrs={'class': 'validate',
@@ -79,13 +80,13 @@ class RegistrarProducto(forms.ModelForm):
             'descripcion': forms.TextInput(
                 attrs={'class': 'validate',
                        'required': False}
-            ),            
+            ),
         }
 
-class RegistrarCompra(forms.ModelForm):
+class EditarProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ["nombre", "precio", "descripcion","imagen","categoria","subcategoria","estado"]
+        fields = ["id","nombre", "precio", "descripcion","categoria","subcategoria","stock"]
         widgets = {
             'nombre': forms.TextInput(
                 attrs={'class': 'validate',
@@ -95,19 +96,19 @@ class RegistrarCompra(forms.ModelForm):
                 attrs={'class': 'validate',
                        'required': False}
             ),
-            'descripcion': forms.Textarea(
-                attrs={'class': 'validate',
-                       'required': False}
-            ),
-            'imagen': forms.FileInput(
-                attrs={'class': 'validate',
-                       'required': False}
-            ),
             'descripcion': forms.TextInput(
                 attrs={'class': 'validate',
                        'required': False}
             ),
         }
+
+
+
+class RegistrarCompraForm(forms.ModelForm):
+    class Meta:
+        model = Compra
+        fields = ["proveedor", "fecha", "costo"]
+
 
 class RegistrarProveedorForm(forms.ModelForm):
     class Meta:

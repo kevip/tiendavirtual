@@ -2,6 +2,15 @@
 {% load staticfiles %}
 {% block content %}
 
+    <nav>
+        <div class="nav-wrapper blue darken-1">
+            <div class="col s12">
+                <a href="{% url 'administrador' %}" class="breadcrumb">Dashboard</a>
+                <a href="{% url 'dashboard_productos' %}" class="breadcrumb">Productos</a>
+                <a href="#!" class="breadcrumb">Lista de Productos</a>
+            </div>
+        </div>
+    </nav>
     <div class="container lista-tiendas">
         <table class="highlight bordered">
         <thead>
@@ -10,7 +19,10 @@
               <th data-field="name">Descripción</th>
               <th data-field="price">Precio</th>
               <th data-field="price">Categoría</th>
-              <th data-field="price">Imágen</th>
+              <!--<th data-field="price">Imágen</th>-->
+              <th data-field="price">Stock</th>
+              <th data-field="price"></th>
+              <th data-field="price"></th>
           </tr>
         </thead>
 
@@ -21,7 +33,14 @@
             <td>{{producto.descripcion}}</td>
             <td>{{producto.precio}}</td>
             <td>{{producto.categoria}}</td>            
-            <td>{{producto.imagen}}</td>
+            <!--<td style="max-width:200px;">{{producto.imagen}}</td>-->
+            <td>{{producto.stock}}</td>
+            <td>
+                <a href="{% url 'editar_producto' producto.id %}"class="btn-floating waves-effect waves-light red"><i class="material-icons">mode_edit</i></a>
+            </td>
+              <td>
+                  <a href="{% url 'eliminar_producto' producto.id %}" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></a>
+            </td>
           </tr>
             {% endfor %}
         </tbody>

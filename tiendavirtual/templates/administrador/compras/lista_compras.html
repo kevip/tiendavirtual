@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'administrador/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <nav>
+        <div class="nav-wrapper blue darken-1">
+            <div class="col s12">
+                <a href="{% url 'administrador' %}" class="breadcrumb">Dashboard</a>
+                <a href="{% url 'dashboard_compras' %}" class="breadcrumb">Compras</a>
+                <a href="#!" class="breadcrumb">Lista de compras</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container lista-tiendas">
+        <table class="highlight bordered">
+        <thead>
+          <tr>
+              <th data-field="id">Producto</th>
+              <th data-field="name">Proveedor</th>
+              <th data-field="price">Fecha</th>
+              <th data-field="price">Costo</th>
+          </tr>
+        </thead>
 
-</body>
-</html>
+        <tbody>
+            {% for compra in compras%}
+          <tr>
+            <td>{{compra.producto}}</td>
+            <td>{{compra.proveedor}}</td>
+            <td>{{compra.fecha}}</td>
+            <td>{{compra.costo}}</td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}

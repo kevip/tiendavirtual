@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^administrador/productos', views.dashboard_productos, name='dashboard_productos'),
     url(r'^administrador/nuevo_producto', views.nuevo_producto, name='nuevo_producto'),
     url(r'^administrador/registrar_producto', views.registrar_producto, name='registrar_producto'),
+    url(r'^administrador/eliminar_producto/(?P<id_producto>[0-9]+)/$', views.eliminar_producto, name='eliminar_producto'),
+    url(r'^administrador/editar_producto/(?P<id_producto>[0-9]+)/$', views.editar_producto, name='editar_producto'),
     #compras
     url(r'^administrador/compras', views.dashboard_compras, name='dashboard_compras'),
     url(r'^administrador/nueva_compra', views.nueva_compra, name='nueva_compra'),
